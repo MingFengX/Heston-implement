@@ -42,8 +42,10 @@ def heston_price(Is_call, S, K, r, tau, kappa, theta, sigma, v_0, rho, Lphi, Uph
     P1 = 1/2 + 1/np.pi * I1
     P2 = 1/2 + 1/np.pi * I2
     call_price = S * P1 - K * np.exp(-r*tau) * P2
+    
     if Is_call:
         return call_price
     else:
         put_price = call_price - S + K * np.exp(-r*tau)
         return put_price
+        
