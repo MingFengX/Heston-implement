@@ -32,6 +32,11 @@ def heston_integrand(S, K, r, tau, kappa, theta, sigma, v_0, rho, u, b, phi):
     return y.real
 
 def heston_price(Is_call, S, K, r, tau, kappa, theta, sigma, v_0, rho, Lphi, Uphi, dphi):
+    """
+    call option price is 
+        C(K) = S * Q^s(S_T>K) - K * exp(-r*tau) * Q(S_T>K)
+    Q^s and Q are integrated, intergrand presents above.
+    """
     phi = np.arange(Lphi, Uphi, dphi)
     int1 = []; int2 = []
     for i in phi:
