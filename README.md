@@ -30,9 +30,7 @@ Besides Heston (1993), I would like to recommand Rouah(2013) for detailed illust
 In heston model or even more broader sense, call option price can be calculated as 
 $$C(K) = S_t P_1 - K e^{- r \tau} P_2$$
 In file src\heston.py, I use numerical methods to calculate the fourier integration, where
-$$
-P_j(x, v, T ; \ln (K))=1/2+1/\pi \int_0^{\infty} {Re}[{e^{-i \phi \ln [K]} f_j(x, v, T ; \phi)}/{i \phi}] d \phi 
-$$.
+$$P_j(x, v, T ; \ln (K))=1/2+1/\pi \int_0^{\infty} {Re}[{e^{-i \phi \ln [K]} f_j(x, v, T ; \phi)}/{i \phi}] d \phi$$.
 $f_j$ is the characteristic function.
 
 We compare the two methods, with little difference.
